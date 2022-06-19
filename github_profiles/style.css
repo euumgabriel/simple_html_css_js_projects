@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  list-style: none;
+}
+
+body {
+  padding: 4rem;
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  row-gap: 2rem;
+}
+
+#search-user-input {
+  max-width: 600px;
+  min-width: 200px;
+  width: 80%;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 0.8rem;
+}
+
+#user-card {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 30% 70%;
+  grid-template-areas:
+    "photo info"
+    "repos repos";
+  max-width: 800px;
+  padding: 3rem;
+  border-radius: 1rem;
+  background-color: cornflowerblue;
+}
+
+#profile-picture-container {
+  grid-area: photo;
+  align-self: center;
+}
+
+#picture {
+  max-width: 100%;
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+}
+
+#user-info-container {
+  grid-area: info;
+  align-self: center;
+  color: white;
+}
+
+#user-info-container > h2 {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+#user-info-container > p {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+#user-info-container > ul > li {
+  font-size: 1.3rem;
+}
+
+#repos-container {
+  grid-area: repos;
+}
+
+#repos-container > a {
+  display: inline-block;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  padding: 0.35rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  background-color: #222;
+  border-radius: 0.5rem;
+}
+
+@media screen and (hover: hover) {
+  #repos-container > a:hover {
+    background-color: white;
+    color: #222;
+    transition: ease-in-out 0.2s;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  * {
+    font-size: 12px;
+  }
+
+  #user-card {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "photo"
+      "info"
+      "repos";
+    justify-items: center;
+    text-align: center;
+  }
+}
